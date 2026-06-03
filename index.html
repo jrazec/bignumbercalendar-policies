@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – Big Number Calendar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --offwhite: #FEFBEE;
+      --background: #F5F5F5;
+      --text: #12121E;
+      --red: #DA251D;
+      --blue: #303075;
+      --gray: #CCC7C7;
+      --navbar: #DA251D;
+      --white: #ffffff;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.7;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background-color: var(--red);
+      color: white;
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(218, 37, 29, 0.35);
+    }
+
+    .navbar {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: white;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .logo-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .logo-text {
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+
+    .logo-text span {
+      display: block;
+      font-weight: 500;
+      font-size: 0.72rem;
+      opacity: 0.85;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* ── HERO BAND ── */
+    .hero {
+      background: linear-gradient(135deg, var(--blue) 0%, #1e1e5a 100%);
+      color: white;
+      padding: 64px 24px 56px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 39px,
+        rgba(255,255,255,0.03) 39px,
+        rgba(255,255,255,0.03) 40px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 39px,
+        rgba(255,255,255,0.03) 39px,
+        rgba(255,255,255,0.03) 40px
+      );
+    }
+
+    .hero-inner {
+      position: relative;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(218,37,29,0.85);
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 99px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      opacity: 0.75;
+      font-weight: 500;
+      max-width: 460px;
+      margin: 0 auto;
+    }
+
+    .hero-date {
+      margin-top: 22px;
+      font-size: 0.8rem;
+      opacity: 0.5;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── MAIN LAYOUT ── */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      border-left: 5px solid var(--red);
+    }
+
+    .toc h2 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 16px;
+    }
+
+    .toc ol {
+      padding-left: 20px;
+      display: grid;
+      gap: 6px;
+    }
+
+    .toc li a {
+      text-decoration: none;
+      color: var(--blue);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: color 0.15s;
+    }
+
+    .toc li a:hover {
+      color: var(--red);
+    }
+
+    /* ── SECTION CARD ── */
+    .section-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 36px 36px 32px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+
+    .section-card:hover {
+      box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+    }
+
+    .section-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 5px;
+      height: 100%;
+      background: var(--blue);
+      border-radius: 16px 0 0 16px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .section-emoji {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: var(--offwhite);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      border: 2px solid var(--gray);
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--blue);
+      letter-spacing: -0.01em;
+    }
+
+    .section-body {
+      font-size: 0.93rem;
+      color: #2e2e40;
+      line-height: 1.75;
+    }
+
+    .section-body p + p {
+      margin-top: 12px;
+    }
+
+    /* ── LISTS ── */
+    .policy-list {
+      list-style: none;
+      margin: 14px 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    .policy-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.91rem;
+      color: #2e2e40;
+    }
+
+    .policy-list li::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--red);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight-box {
+      background: var(--offwhite);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-top: 16px;
+      border: 1.5px solid #e8e0c4;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--blue);
+    }
+
+    .highlight-box.danger {
+      background: #fff5f5;
+      border-color: #ffcaca;
+      color: #8b1a1a;
+    }
+
+    /* ── CONTACT CARD ── */
+    .contact-card {
+      background: linear-gradient(135deg, var(--blue) 0%, #1e1e5a 100%);
+      border-radius: 16px;
+      padding: 40px 36px;
+      color: white;
+      text-align: center;
+      margin-top: 40px;
+      box-shadow: 0 10px 30px rgba(48,48,117,0.3);
+    }
+
+    .contact-card h2 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .contact-card p {
+      opacity: 0.75;
+      font-size: 0.92rem;
+      margin-bottom: 22px;
+    }
+
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--red);
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 13px 26px;
+      border-radius: 99px;
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 4px 14px rgba(218,37,29,0.45);
+    }
+
+    .contact-email:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(218,37,29,0.55);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--text);
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    footer strong {
+      color: rgba(255,255,255,0.8);
+    }
+
+    footer a {
+      color: var(--red);
+      text-decoration: none;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px;
+      background: var(--gray);
+      opacity: 0.5;
+      margin: 8px 0 20px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .section-card {
+        padding: 24px 20px 22px;
+      }
+      .toc {
+        padding: 22px 20px;
+      }
+      .contact-card {
+        padding: 32px 20px;
+      }
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-card {
+      animation: fadeUp 0.45s ease both;
+    }
+
+    .section-card:nth-child(1) { animation-delay: 0.05s; }
+    .section-card:nth-child(2) { animation-delay: 0.10s; }
+    .section-card:nth-child(3) { animation-delay: 0.15s; }
+    .section-card:nth-child(4) { animation-delay: 0.20s; }
+    .section-card:nth-child(5) { animation-delay: 0.25s; }
+    .section-card:nth-child(6) { animation-delay: 0.30s; }
+    .section-card:nth-child(7) { animation-delay: 0.35s; }
+    .section-card:nth-child(8) { animation-delay: 0.40s; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="4" width="18" height="17" rx="3" fill="#303075"/>
+          <rect x="3" y="4" width="18" height="6" rx="3" fill="#DA251D"/>
+          <rect x="7" y="2" width="2" height="4" rx="1" fill="#303075"/>
+          <rect x="15" y="2" width="2" height="4" rx="1" fill="#303075"/>
+          <text x="12" y="18" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="7" fill="white">31</text>
+        </svg>
+      </div>
+      <div class="logo-text">
+        Big Number Calendar
+        <span>Privacy Policy</span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">Legal Document</div>
+      <h1>Privacy Policy</h1>
+      <p>We respect your privacy and are committed to protecting your personal information.</p>
+      <div class="hero-date">Effective Date: June 2025</div>
+    </div>
+  </section>
+
+  <main>
+
+    <!-- TABLE OF CONTENTS -->
+    <div class="toc">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#data-collection">Data Collection and Usage</a></li>
+        <li><a href="#permissions">Permissions</a></li>
+        <li><a href="#data-storage">Data Storage</a></li>
+        <li><a href="#third-party">Third-Party Services</a></li>
+        <li><a href="#responsibility">Data Responsibility</a></li>
+        <li><a href="#age">Age Requirement</a></li>
+        <li><a href="#updates">Policy Updates</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </div>
+
+    <!-- 1. DATA COLLECTION -->
+    <div class="section-card" id="data-collection">
+        <div class="section-header">
+          <div class="section-emoji">📊</div>
+          <div class="section-title">Terms of Service</div>
+        </div>
+        <div class="section-body">
+          <p class="p2">By using this application, you agree to allow the app to access certain device features necessary to provide core functionality, including notifications, alarms, calendar storage, media access, and image selection. The app allows users to create schedules, set alarms and reminders, attach images to calendar entries, and customize event markers using icons or labels. Users may enable or disable calendar systems such as the Vietnamese calendar according to their personal needs. The app also supports monthly and yearly calendar views, image-based schedule management, and personalized event organization tools.</p>
+
+          <p class="p2">This application is designed primarily for offline use. Most features operate directly on the device without requiring an internet connection. Users are responsible for managing the information stored within the app, including images, reminders, schedules, and event notes. Alarms and notifications depend on device settings and permissions. The developer is not responsible for missed notifications resulting from disabled permissions, battery optimization, device restrictions, or manual changes made by the user.</p>
+
+          <p class="p3">⚠️  You agree not to use the app for illegal purposes, to cause harm, or to attempt unauthorized modification of the software.</p>
+
+          <p class="p4"><strong>Age requirement:</strong> This app is intended for users aged 4 and older. We do not collect personal information from children under the age of 13.</p>
+        </div>
+    </div>
+
+    <!-- 2. PERMISSIONS -->
+    <div class="section-card" id="permissions">
+        <div class="section-header">
+          <div class="section-emoji">🔐</div>
+          <div class="section-title">Privacy Policy</div>
+        </div>
+        <div class="section-body">
+          <p class="p1">We respect your privacy and are committed to protecting your personal information. This app is designed with an offline-first approach, meaning your schedules, reminders, selected images, icons, calendar settings, and personal notes are stored directly on your device whenever possible. We do not actively collect sensitive personal information such as passwords, payment details, or personal identification data. All information you create within the app remains under your control.</p>
+
+          <p class="p2">The app may request access to notifications, storage, photos, or device media to enable features such as setting alarms, attaching images to schedules, customizing event icons, and saving calendar data. These permissions are used solely for app functionality and are not intended for unauthorized tracking or surveillance.</p>
+
+          <p class="p2">📋  Data collection: We do not transmit any personal information to external servers. All data is stored only on your device.</p>
+
+          <p class="p2"><strong>Third-party services:</strong> This app uses Google AdMob for displaying advertisements. AdMob may collect certain data, such as device identifiers, to serve ads. Please refer to Google's Privacy Policy for more details.</p>
+        </div>
+    </div>
+
+    <!-- 3. DATA STORAGE -->
+    <div class="section-card" id="data-storage">
+        <div class="section-header">
+          <div class="section-emoji">☁️</div>
+          <div class="section-title">Data Usage</div>
+        </div>
+        <div class="section-body">
+          <p class="p2">This app stores most user-generated data directly on the device. Data may include alarms, schedules, reminders, calendar options, Vietnamese calendar on/off status, annual calendar data, event images, and custom icons used to mark important dates or activities. Because the app operates primarily offline, your information is generally not sent to external servers.</p>
+
+          <p class="p2">Users are responsible for backing up important information stored in the app. While we always strive to provide a stable experience, the developer is not liable for data loss due to device resets, operating system errors, accidental deletion, or hardware failures. We do not sell, rent, or intentionally share your information with third parties.</p>
+
+          <p class="p3">🔒  Data deletion: Uninstalling the app will remove all data stored on your device. Cloud backup is not currently available.</p>
+        </div>
+    </div>
+
+    <!-- 4. THIRD PARTY -->
+    <div class="section-card" id="third-party">
+        <div class="section-header">
+          <div class="section-emoji">📢</div>
+          <div class="section-title">Advertising Policy</div>
+        </div>
+        <div class="section-body">
+          <p class="p2">This app displays advertisements through Google AdMob. Ad revenue supports the ongoing development and maintenance of the app. AdMob may collect information such as device identifiers and approximate location to serve more relevant ads. If you prefer not to receive personalized ads, you may disable ad personalization in your device settings.</p>
+        </div>
+    </div>
+
+    <!-- 5. RESPONSIBILITY -->
+    <div class="section-card" id="responsibility">
+        <div class="section-header">
+          <div class="section-emoji">📉</div>
+          <div class="section-title">User Rights</div>
+        </div>
+        <div class="section-body">
+          <p class="p2">You have full control over all data you create and store within the app. You may remove all data from your device at any time by uninstalling the app. Individual events, images, and reminders can be deleted directly from within the app settings. Since we do not transmit personal information externally, no separate data deletion request process is required.</p>
+        </div>
+    </div>
+
+    <!-- 6. AGE -->
+    <div class="section-card" id="age">
+        <div class="section-header">
+          <div class="section-emoji">🔄</div>
+          <div class="section-title">Policy Changes</div>
+        </div>
+        <div class="section-body">
+          <p class="p2">We may update this policy in response to app updates or changes in legal requirements. If significant changes are made, users will be notified via in-app notices or app store update notes. Continued use of the app after changes are made constitutes acceptance of the updated policy.</p>
+        </div>
+    </div>
+
+    <!-- 7. UPDATES -->
+    <div class="section-card" id="updates">
+      <div class="section-header">
+        <div class="section-emoji">🔄</div>
+        <div class="section-title">Policy Updates</div>
+      </div>
+      <div class="section-body">
+        <p>We may update this Privacy Policy from time to time to reflect app updates, legal requirements, or feature changes.</p>
+        <div class="highlight-box">
+          Important changes will be communicated through app updates or store listing notes.
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="contact-card" id="contact">
+      <h2>📩 Contact Us</h2>
+      <p>Have questions or concerns about this Privacy Policy? We'd love to hear from you.</p>
+      <a class="contact-email" href="mailto:bignumbercalendar-support@gmail.com">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <polyline points="22,6 12,13 2,6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        bignumbercalendar-support@gmail.com
+      </a>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 <strong>Big Number Calendar</strong>. All rights reserved.</p>
+    <p style="margin-top:6px;">This privacy policy is effective as of June 2025.</p>
+  </footer>
+
+</body>
+</html>
